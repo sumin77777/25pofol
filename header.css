@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0%;
+    text-decoration: 0;
+    list-style: none;
+    font-style: normal;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+}
+html,
+body {
+    font-family: 'Pretendard Variable', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+body {
+    background: #333;
+    font-family: 'Pretendard Variable', sans-serif;
+    margin: 0 auto;
+    
+}
+
+
+.scroll{
+  margin: 160px auto;
+  display: flex;
+    flex-direction: column;
+    gap: 120px;
+
+}
+
+/* intro */
+/* 화면 전체 덮는 컨테이너 */
+#fall-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 99999;      /* ← 훨씬 더 높게! */
+}
+
+/* 원본 템플릿은 화면에 보이지 않게 */
+.icon-template {
+    display: none;
+}
+
+/* 복제 요소 */
+.fall-item {
+    position: absolute;
+    will-change: transform, opacity;
+    pointer-events: none;
+}
+
+/*intro end*/
+/*header*/
+/* 위치/레이어 설정 */
+.dropdown-content {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content .menu1 {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-content .menu1 h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* 메뉴2 (링크 리스트) */
+.dropdown-content .menu2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.dropdown-content .menu2 ul li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropdown-content .menu2 li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    color: #222;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content .menu2 li a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(20%) sepia(0%) saturate(750%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.dropdown-content .menu2 li a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+
+.dropdown-content .menu2 a {
+  transition: color 0.3s;
+}

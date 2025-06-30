@@ -1,0 +1,252 @@
+.wrap1 {
+  top: 30px;
+  margin-top: 30px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+}
+
+.wrap2 {
+  /*1*/
+  margin: 0 auto;
+  display: flex;
+  scroll-snap-align: end;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.wrap3 {
+  /*2*/
+  margin: 0 auto;
+  display: flex;
+  scroll-snap-align: start;
+  align-items: center;
+}
+
+.wrap4 {
+  /*3*/
+  margin: 0 auto;
+  display: flex;
+  scroll-snap-align: start;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  /* fall-container(9999)보다 아래에 있도록 */
+  background: #fFF;
+  /* 또는 단일 컬러 배경:
+     background-color: #1a1a1a;
+  */
+}
+
+.content {
+  max-width: 1406px;
+  height: 762px;
+  border-radius: 42px;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow-y: hidden;
+
+}
+
+.hometxt {
+  padding-top: 110px;
+  padding-left: 110px;
+  padding-right: 42px;
+  padding-bottom: 0px;
+  display: block;
+
+}
+
+.subtitle {
+  color: #3C3C3C;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  display: flex;
+  width: 247px;
+
+}
+
+.title {
+  color: #3C3C3C;
+  font-family: Pretendard;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -2.56px;
+  display: flex;
+  width: 705px;
+}
+
+.title span {
+  display: inline-block;
+  opacity: 0;
+  /* 애니메이션 전 초기 상태 */
+}
+
+.subtitle2 {
+  color: #3C3C3C;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  margin-right: 700px;
+  width: 477px;
+  height: 44px;
+  display: flex;
+  position: relative
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  /* 글자가 하나씩 잘리도록 */
+  white-space: nowrap;
+  border-right: 2px solid #222;
+  /* 커서 */
+  /* 커서 깜빡임 애니메이션 */
+  animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.content img {
+  margin-right: 0;
+  width: 35%;
+  position: relative;
+  left: 870px;
+  top: 95px;
+}
+
+.qmark {
+  display: block;
+  transform-origin: center;
+  will-change: transform;
+}
+
+#fall-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+  /* ← 훨씬 더 높게! */
+}
+
+
+/* 활성화 시 fade-in */
+#pdfContainer.show {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+#pdfContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+#pdfContainer.show {
+  display: block;
+}
+
+#pdfContainer object {
+  margin: 50px auto;
+  display: block;
+  width: 80%;
+  height: 80%;
+}
+
+#pdfClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.pdf-thumb {
+  cursor: pointer;
+}
+
+.panel {
+  margin: 0 auto;
+  display: flex;
+  scroll-snap-align: start;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.panel .hoka-box,
+.panel .asahi-box,
+.panel .ezair-box,
+.panel .mcdonald-box,
+.panel .life4cut-box,
+.panel .etc-box {
+  border-radius: 42px;
+  border: 2px solid #333;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+  object-fit: cover;
+  overflow-y: hidden;
+}
+
+.hoka-box,
+.asahi-box,
+.ezair-box,
+.mcdonald-box,
+.life4cut-box,
+.etc-box {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 0%;
+  background: yellow;
+  z-index: 2000;
+  transition: height 0.1s linear;
+}

@@ -1,0 +1,168 @@
+
+
+.econtent{
+    display: block;
+    border-radius: 42px;
+    margin-bottom: 00px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 150px;
+
+}
+
+.econtent-top{
+    width: 1406px;
+    height: 368px;
+    background-color: #fff;
+    border-radius: 42px;
+    margin-bottom: 32px;
+}
+
+.econtent-bt{
+    display: flex;
+}
+
+.econtent1{
+    display: block;
+    margin-right: 43px;
+}
+
+.econtent2-1{
+    width: 837px;
+    height: 194px;
+    background-color: #fff;
+    border-radius: 42px;
+    margin-bottom: 32px;
+
+}
+.econtent2-2{
+    width: 837px;
+    height: 127px;
+    background-color: #fff;
+    border-radius: 42px;
+}
+
+.econtent3{
+    width: 526px;
+    height: 357px;
+    background-color: #fff;
+    border-radius: 42px;
+}
+
+.time{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.timetable{
+    position: absolute;
+    width: 1169px;
+    height: 30px;
+    display: block;
+    margin-top: 52px;
+    margin-left: 137px;
+    margin-right: 89px;
+    align-items: center;
+}
+
+hr{
+    border: 0.5px solid #313131;
+
+}
+
+.timedot1{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border:1px solid #313131;
+    margin-left: 126px;
+    margin-top: 41px;
+}
+.timedot2{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border:1px solid #313131;
+    margin-left: 526px;
+    margin-top: 41px;
+}
+.timedot3{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border:1px solid #313131;
+    margin-left: 926px;
+    margin-top: 41px;
+}
+
+.etimetxt{
+    display: flex;
+    justify-content: center;
+   margin-top: 140px;
+   margin-left: 132px;
+   position: absolute;
+   font-size: 18px;
+   list-style: 28px;
+  font-weight: 300;
+}
+
+.etimetxt-1{
+    margin-right: 138px;
+
+}
+
+.etimetxt-2{
+    margin-right: 138px;
+  
+}
+
+.ecbox1{
+    display: flex;
+    margin-top:75px;
+    margin-bottom: 75px;
+    margin-left: 110px;
+    position: absolute;
+    font-size: 18px;
+    list-style: 28px;
+   font-weight: 300;
+   /* justify-content: center */
+}
+
+
+
+.ec1{
+    display: flex;
+    margin-right: 50px;
+    /* position: absolute; */
+}
+.ec2{
+    display: flex;
+    /* position: absolute; */
+}
+
+.ec2-1{
+    margin-right: 20px;
+}
+.ec2-3{
+    margin-right: 20px;
+}
+
+.ecbox2{
+    display: flex;
+    margin-top:45px;
+    margin-left: 270px;
+    position: absolute;
+    font-size: 18px;
+    list-style: 28px;
+   font-weight: 300;
+}
