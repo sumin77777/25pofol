@@ -3,11 +3,7 @@
 .econtent{
     display: block;
     border-radius: 42px;
-    margin-bottom: 00px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 150px;
-
+    margin: 0 auto;
 }
 
 .econtent-top{
