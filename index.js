@@ -185,28 +185,32 @@ const dotBounce = gsap.timeline({ paused: true, repeat: 1 });
     })();
   }
 }
-
-
 document.addEventListener('DOMContentLoaded', () => {
-  const thumbs       = document.querySelectorAll('.pdf-thumb');
-  const pdfContainer = document.getElementById('pdfContainer');
-  const pdfObject    = document.getElementById('pdfObject');
-  const pdfLink      = document.getElementById('pdfLink');
-  const pdfClose     = document.getElementById('pdfClose');
+  const thumbs    = document.querySelectorAll('.pdf-thumb');
+  const modal     = document.getElementById('pdfModal');
+  const viewer    = document.getElementById('pdfViewer');
+  const btnClose  = document.getElementById('pdfClose');
 
-  // 썸네일 클릭 리스너 등록
   thumbs.forEach(thumb => {
     thumb.addEventListener('click', () => {
-      const url = thumb.dataset.pdf;  // data-pdf 읽어오기
-      pdfObject.setAttribute('data', url);
-      pdfLink.setAttribute('href', url);
-      pdfContainer.classList.add('show');
+      const url = thumb.dataset.pdf;
+      // PDFObject 임베드
+      PDFObject.embed(url, "#pdfViewer", {
+        fallbackLink: "<p>PDF를 보려면 <a href='" + url + "' target='_blank'>여기</a>를 클릭하세요.</p>"
+      });
+      // 모달 보이기
+      modal.classList.remove('hidden');
     });
   });
 
-  // 닫기 버튼
-  pdfClose.addEventListener('click', () => {
-    pdfContainer.classList.remove('show');
-    pdfObject.removeAttribute('data');
+  // 모달 닫기
+  btnClose.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    viewer.innerHTML = "";  // embed 내용 제거
+  });
+
+  // 백드롭 클릭해도 닫히게
+  document.querySelector('.modal-backdrop').addEventListener('click', () => {
+    btnClose.click();
   });
 });
