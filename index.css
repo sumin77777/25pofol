@@ -260,7 +260,7 @@
   display: inline-block;
   font-size: 10vw;       /* 화면 크기에 따라 조절 */
   font-weight: bold;
-  color: yellow;
+  color: rgba(255, 255, 0, 0.5);
   text-transform: uppercase;
   letter-spacing: 1vw;
   padding-right: 5vw;    /* 단어 사이 간격 */
@@ -280,7 +280,7 @@
   display: inline-block;
   font-size: 3vw;       /* 화면 크기에 따라 조절 */
   font-weight: bold;
-  color: yellow;
+  color: rgba(255, 255, 0, 0.5);
   text-transform: uppercase;
   letter-spacing: 1vw;
   padding-right: 5vw;    /* 단어 사이 간격 */
