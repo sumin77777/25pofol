@@ -85,7 +85,7 @@ function initMainAnimations() {
     box.addEventListener('mousemove', e => {
       const rect = box.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
       gsap.to(box, {
         rotationY: 20 * x,
         rotationX: -20 * y,
@@ -111,19 +111,19 @@ function initMainAnimations() {
     start: "top 75%",
     onEnter: () => {
       gsap.from(".acontent1", { x: -100, opacity: 0, duration: 0.6, ease: "power2.out" });
-      gsap.from(".acontent2", { x:  100, opacity: 0, duration: 0.6, delay: 0.2, ease: "power2.out" });
+      gsap.from(".acontent2", { x: 100, opacity: 0, duration: 0.6, delay: 0.2, ease: "power2.out" });
     }
   });
 
   // Experience 타임라인 점프 & hr 애니메이션
-const dotBounce = gsap.timeline({ paused: true, repeat: 1 });
+  const dotBounce = gsap.timeline({ paused: true, repeat: 1 });
   ['.timedot1', '.timedot2', '.timedot3'].forEach((sel, i) => {
     dotBounce
       .to(sel, { y: -30, duration: 0.5, ease: 'power2.out' }, i * 0.4)
-      .to(sel, { y: 0,    duration: 0.5, ease: 'bounce.out' }, `-=${0.5 - i * 0.1}`);
+      .to(sel, { y: 0, duration: 0.5, ease: 'bounce.out' }, `-=${0.5 - i * 0.1}`);
   });
 
-  
+
   // 2) ScrollTrigger로 트리거 걸기
   ScrollTrigger.create({
     trigger: ".econtent",
@@ -186,10 +186,10 @@ const dotBounce = gsap.timeline({ paused: true, repeat: 1 });
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
-  const thumbs    = document.querySelectorAll('.pdf-thumb');
-  const modal     = document.getElementById('pdfModal');
-  const viewer    = document.getElementById('pdfViewer');
-  const btnClose  = document.getElementById('pdfClose');
+  const thumbs = document.querySelectorAll('.pdf-thumb');
+  const modal = document.getElementById('pdfModal');
+  const viewer = document.getElementById('pdfViewer');
+  const btnClose = document.getElementById('pdfClose');
 
   thumbs.forEach(thumb => {
     thumb.addEventListener('click', () => {
@@ -213,4 +213,110 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.modal-backdrop').addEventListener('click', () => {
     btnClose.click();
   });
+
+
+  const wrap = document.querySelector('.bg-text-wrap');
+
+  // 무한 루프 애니메이션: x를 -50% 만큼 이동시키고, 다시 0으로 래핑
+
+  // 첫 번째 줄: 왼쪽으로 이동
+  gsap.to('.wrap-txt1', {
+    xPercent: -50,
+    ease: 'none',
+    duration: 20,
+    repeat: -1
+  });
+  // 두 번째 줄: 오른쪽으로 이동 (반대 방향)
+  gsap.to('.wrap-txt2', {
+    xPercent: 50,
+    ease: 'none',
+    duration: 25,
+    repeat: -1
+  });
+
+
+});
+// document.addEventListener('DOMContentLoaded', () => {
+//   // GSAP & ScrollTrigger 설정
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // 차트 애니메이션을 위한 ScrollTrigger 설정
+//   ScrollTrigger.create({
+//     trigger: "#chart-section",  // 차트를 포함한 섹션
+//     start: "top 80%",  // 화면 상단 80%에 닿을 때 애니메이션 시작
+//     onEnter: () => animateCharts(),
+//     once: true  // 한 번만 실행
+//   });
+
+//   // 차트 애니메이션 함수
+//   function animateCharts() {
+//     const charts = document.querySelectorAll('.chart');
+    
+//     charts.forEach(chart => {
+//       const title = chart.querySelector('.data-num');
+//       const circle = chart.querySelector('circle');
+//       const target = +title.getAttribute('data-num');
+//       const radius = circle.getAttribute('r');
+//       const circumference = 2 * Math.PI * radius; // 원의 둘레 계산
+
+//       // GSAP 애니메이션 (from 0 to data-num)
+//       gsap.to({ value: 0 }, {
+//         value: target,  // 목표값
+//         duration: 1.5,
+//         ease: 'power1.out',
+//         onUpdate() {
+//           const progress = this.targets()[0].value;
+//           title.textContent = Math.floor(progress);
+//           const offset = circumference * (1 - progress / 100); // 원의 외각선을 그려나감
+//           circle.style.strokeDashoffset = offset;
+//         }
+//       });
+//     });
+//   }
+// });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // GSAP & ScrollTrigger 설정
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 차트 애니메이션을 위한 ScrollTrigger 설정
+  ScrollTrigger.create({
+    trigger: "#chart-section",  // 차트를 포함한 섹션
+    start: "top 80%",  // 화면 상단 80%에 닿을 때 애니메이션 시작
+    onEnter: () => animateCharts(),
+    once: true  // 한 번만 실행
+  });
+
+  // 차트 애니메이션 함수
+  function animateCharts() {
+    const charts = document.querySelectorAll('.chart');
+    
+    charts.forEach(chart => {
+      const title = chart.querySelector('.data-num');
+      const circle = chart.querySelector('circle');
+      const target = +title.getAttribute('data-num');
+      const radius = circle.getAttribute('r');
+      const circumference = 2 * Math.PI * radius; // 원의 둘레 계산
+
+      // strokeDasharray 값 설정
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+
+      // GSAP 애니메이션 (from 0 to data-num)
+      gsap.to({ value: 0 }, {
+        value: target,  // 목표값
+        duration: 1.5,
+        ease: 'power1.out',
+        onUpdate() {
+          const progress = this.targets()[0].value;
+          title.textContent = Math.floor(progress);
+          const offset = circumference * (1 - progress / 100); // 원의 외각선을 그려나감
+          circle.style.strokeDashoffset = offset;
+        }
+      });
+    });
+  }
 });

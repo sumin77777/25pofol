@@ -47,6 +47,11 @@
     height: 357px;
     background-color: #fff;
     border-radius: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .time{
@@ -165,4 +170,56 @@ hr{
     font-size: 18px;
     list-style: 28px;
    font-weight: 300;
+}
+
+
+.chart-box .chart{
+    margin: 0 20px;
+    position: relative;
+}
+.chart-box .chart h2{
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+.chart-box .chart h3{
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    margin: 0;
+    color: #444;
+}
+.chart-box .chart svg{
+    width: 150px;
+    height: 150px;
+}
+
+circle{
+    fill: #ebebeb;
+    stroke-width: 20px;
+    stroke-dasharray: 628.32px;
+    stroke-dashoffset: 628.32px;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-linecap: round;
+}
+.chart-box:nth-child(1) .chart:nth-child(1) circle {
+  stroke: #00ff6a; 
+}
+.chart-box:nth-child(1) .chart:nth-child(2) circle {
+  stroke: #0099ff; 
+}
+
+.chart-box:nth-child(2) .chart:nth-child(1) circle {
+  stroke: #ffb700;
+}
+.chart-box:nth-child(2) .chart:nth-child(2) circle {
+  stroke: #ff007b;
+}
+.chart-box{
+  display: flex;
 }

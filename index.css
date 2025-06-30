@@ -243,3 +243,45 @@
   z-index: 2000;
   transition: height 0.1s linear;
 }
+
+
+.bg-text-wrap {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 200%;           /* 복제된 두 줄을 가로로 배치 */
+  white-space: nowrap;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.bg-text {
+  display: inline-block;
+  font-size: 10vw;       /* 화면 크기에 따라 조절 */
+  font-weight: bold;
+  color: yellow;
+  text-transform: uppercase;
+  letter-spacing: 1vw;
+  padding-right: 5vw;    /* 단어 사이 간격 */
+}
+
+.bg-text-wrap2 {
+  position: fixed;
+  top: 60%;
+  right: 0;
+  width: 200%;           /* 복제된 두 줄을 가로로 배치 */
+  white-space: nowrap;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.bg-text2 {
+  display: inline-block;
+  font-size: 3vw;       /* 화면 크기에 따라 조절 */
+  font-weight: bold;
+  color: yellow;
+  text-transform: uppercase;
+  letter-spacing: 1vw;
+  padding-right: 5vw;    /* 단어 사이 간격 */
+}
+
