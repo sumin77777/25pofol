@@ -1,3 +1,10 @@
+
+a{
+ color: #fff;
+ font-size: 34px;
+}
+
+
 .wrap1 {
   top: 30px;
   margin-top: 30px;
@@ -202,10 +209,12 @@
 .panel {
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   scroll-snap-align: start;
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
+  gap: 20px;
 }
 
 .panel .hoka-box,
@@ -221,6 +230,7 @@
   overflow: hidden;
   object-fit: cover;
   overflow-y: hidden;
+
 }
 
 .hoka-box,
