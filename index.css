@@ -219,6 +219,7 @@ a{
   width: 100%;
 }
 
+.panel .bijjya-box,
 .panel .hoka-box,
 .panel .asahi-box,
 .panel .ezair-box,
@@ -237,6 +238,7 @@ transform-style: preserve-3d;
   overflow-y: hidden;
 }
 
+.panel .bijjya-box img,
 .panel .hoka-box img,
 .panel .asahi-box img,
 .panel .ezair-box img,
